@@ -1,0 +1,2 @@
+Para instalar jquery para tyscrip
+$ npm install --save @types/jquery

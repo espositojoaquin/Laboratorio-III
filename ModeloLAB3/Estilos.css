@@ -1,0 +1,95 @@
+ 
+ html{
+     box-sizing:border-box;
+     font-size: 62.5%;
+     
+ }
+ 
+ .margin
+ {
+   margin: 3rem;
+ }
+ select{
+  width: 15rem;
+  height: 2rem;
+  margin: 2rem;
+ }
+ label{
+   font-size: large;
+   font-weight: bold;
+   
+ }
+ button{
+   width: 9rem;
+   
+  }
+ /* #btnMod
+  {
+    height: 6rem;
+    width: 4rem;
+    font: icon;
+    background-color: orangered;
+    
+  }*/
+
+ #salir
+ {
+   color:aliceblue; 
+   /*margin: 0.2rem;*/
+   margin-top: 0;
+   height: 3rem;
+   margin-left: 47rem;
+   font-size: medium;
+   width: 3rem;
+   position: absolute;
+   display:block;
+   background-color:red;
+ }
+ .inputMargin{
+   margin-block-end: 2rem;
+ }
+
+ .formulario{
+  background-color:black; 
+  padding: 3rem;
+  right: 40rem;
+  border: black;
+  height: 55rem;
+  color: white;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  align-content: center;
+  justify-content: center;
+  animation-delay: 3s;
+  
+}
+#btnAgregar{
+ margin-right: 15rem;
+  position: absolute;
+}
+
+.main{
+    
+  height: 100%;
+  background-color: brown;
+  padding: 3rem;
+  color:black;
+}
+ .table{
+  border-collapse:collapse;
+  width: 100%;
+  font-size: 2rem;
+  background-color: gray;
+} 
+th,td{
+  padding: 8px;
+  text-align: left;
+  color:black;
+}
+tr:nth-child(even){
+  background-color: azure;
+}
+
+  
+   
+  
