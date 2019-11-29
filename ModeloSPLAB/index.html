@@ -6,83 +6,109 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="./Persona.js"></script>
-    <script type="text/javascript" src="./Alumno.js"></script>
-
+    <script type="text/javascript" src="./Alumno.js"></script>   
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">  
+    <link rel="stylesheet" href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
     <script type="text/javascript" src="./funciones.js"></script>
     <link rel="stylesheet" href="./Estilos.css">  
-    <!-- <script src="./node_modules/bootstrap/dist/css/bootstrap.min.css"></script> -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-        crossorigin="anonymous">
-    
+
     <title>Document</title>
 </head>
-<body style>
+<body style="background-color: blue;">
+    <!-- Navegador -->
+        
+        <nav class="navbar navbar-expand-lg bg-dark navbar-dark mt-5 ">
+                <ul class="navbar-nav">
+                    <li class="nav-item ">
+                        <a class="nav-link" href="">Lista</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" id="mostrar">Mostrar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="">Formulario</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" role="button" href="" id="enlaces" data-toggle='dropdown'  aria-expanded="true" aria-haspopup="true">Ver</a>
+                        <div class="dropdown-menu" aria-labelledby="enlaces">
+                            <a href="#" class="dropdown-item" id="promediar" data-toggle="modal" data-target="#myModalReduce">Promedio</a>
+                            <a href="#" class="dropdown-item" id="filtrar" data-toggle="modal" data-target="#myModal">Filtrar</a>
+                            <a href="#" class="dropdown-item" id="nombreApellido">Solo nombre y apellido</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
     <div id="contenerdor" class="container-fluid main ">
-        <input type="button" id="btn" value="Boton" class="control-button"></input> 
+     
+      
 
       <!-- Comiezo de formulario -->
         <div class="rounded margin formulario"  id="formulario">
             <label for="Nombre" class="control-label"> 
                 Nombre: </label>
-            <input  type="text" id="nombre" class="form-control inputMargin"placeholder="Nombre" ></input>
+            <input  type="text" id="nombre" class="form-control custom-select-lg inputMargin"placeholder="Nombre" ></input>
             <label for="Apellido" class="control-label"> 
                 Apellido: </label>
-            <input type="text" id="apellido"class="form-control inputMargin" placeholder="Apellido"></input>
+            <input type="text" id="apellido"class="form-control custom-select-lg inputMargin" placeholder="Apellido"></input>
             <label for="Cuil/Legajo" class="control-label"> 
                 Cuil/Legajo: </label>
-            <input type="text" id="cuil"class="form-control inputMargin"placeholder="Cuil/Legajo"></input>
+            <input type="text" id="cuil"class="form-control custom-select-lg inputMargin"placeholder="Cuil/Legajo"></input>
             <label for="Edad" class="control-label">
                  Edad: </label>
-            <input type="text" class="form-control inputMargin"placeholder="Edad"></input>
+            <input type="text" id="edad" class="form-control custom-select-lg inputMargin"placeholder="Edad"></input>
             <label for="Sexo" class="control-label"> 
                 Sexo: </label>
-            <select name="sexo" class="form-control inputMargin" id="sexo">
+            <select name="sexo" class="form-control-lg custom-select-lg" id="sexo">
                     <option value="Masculino"> Masculino
                         </option><option value="Femenino"> Femenino
             </option></select>
-            <div class="form-group col-xs-4 col-sm-4 col-md-5 col-lg-5">
-                    <button name="alta" class="btn btn-success alta btn-lg" id="btnAlta" onclick="personas.Agregar()" >Cargar</button>
-                </div>
-                <div class="form-group col-xs-4 col-sm-4 col-md-5 col-lg-5">
-                        <button name="Cancelar" class="btn btn-primary btn-lg" id="Cancelar" onclick="personas.Modificar()">Modificar</button>
+            <div class="row">
+                    <div class="col-xxs-2 col-xs-2 col-sm-4 col-md-5 col-lg-5">   
+                  <button name="alta" class="btn btn-success alta custom-select-lg btn-lg" id="btnAlta" onclick="personas.Agregar()" >Cargar</button>
                     </div>
-            <div class="form-group col-xs-1 col-sm-1 col-md-1 col-lg-1">
-                    <button name="eliminar" class="btn btn-danger btn-lg" id="eliminar"  onclick="personas.Eliminar()">Eliminar</button>
-           </div>
-        </div>
+                    <div class="col-xxs-2 col-xs-2 col-sm-4 col-md-5 col-lg-5">    
+                        <button name="Cancelar" class="btn btn-primary custom-select-lg btn-lg" id="Cancelar" onclick="personas.Modificar()">Modificar</button>
+                    </div>
+                    <div class="col-xxs-2 col-xs-1 col-sm-1 col-md-1 col-lg-1"> 
+                        <button name="eliminar" class="btn btn-danger  custom-select-lg btn-lg" id="eliminar"  onclick="personas.Eliminar()">Eliminar</button>
+                    </div>
+                </div>
+            </div>
         <!-- comienza los filtros -->
         <div class="row margin">
                 <hr>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <label for="txtFiltro" id="lblTxtFiltro">Filtrar por Nombre: </label>
-                    <input type="text" id="txtFiltroNombre" name="txtFiltro" onkeyup="personas.FiltrarNombre()">
+                    <label class="control-label" for="txtFiltro" id="lblTxtFiltro" >Filtrar por Nombre: </label>
+                    <input type="text" id="txtFiltroNombre" name="txtFiltro"class="custom-select-lg" onkeyup="personas.FiltrarNombre()">
                     <p>(Es CaseSensitive)</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
-                    <label for="Promedio" id="lblPromedio">Promedio de Edad: </label>
-                    <input type="text" id="txtPromedio" name="Promedio">
+                    <label class="control-label" for="Promedio" id="lblPromedio">Promedio de Edad: </label>
+                    <input type="text" id="txtPromedio" name="Promedio" class="custom-select-lg">
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4">
                     <button name="btnEstadisticas" id="btnEstadisticas" class="btn btn-info" >Calcular Promedio</button>
                 </div>
                 <hr>
             </div> 
-            <div class="row margin">
+            <div>
                     <hr>
                     <b>Campos Mostrados</b> Tildar los campos a mostrar.
-        
                 </div>
-                <div class="row margin">
+                <br>
+            <div class="row margin">
+                
                         <label>
                             <input type="checkbox" name="mostrarID" id="mostrarID" value="" checked="" onchange="personas.onLoadCheck()">ID</label>
                         <label>
                             <input type="checkbox" name="mostrarNombre" id="mostrarNombre" value="" checked="" onchange="personas.onLoadCheck()">Nombre</label>
                         <label>
-                            <input type="checkbox" name="mostrarEdad" id="mostrarEdad" value="" checked="" onchange="Facultad.Funciones.Checkbox_OnChange()">Edad</label>
+                            <input type="checkbox" name="mostrarEdad" id="mostrarEdad" value="" checked="" onchange="personas.onLoadCheck()">Edad</label>
                         <label>
                             <input type="checkbox" name="mostrarApellido" id="mostrarApellido" value="" checked="" onchange="personas.onLoadCheck()">Apellido</label>
                         <label>
-                            <input type="checkbox" name="mostrarSexo" id="mostrarSexo" value="" checked="" onchange="Facultad.Funciones.Checkbox_OnChange()">Sexo</label>
+                            <input type="checkbox" name="mostrarSexo" id="mostrarSexo" value="" checked="" onchange="personas.onLoadCheck()">Sexo</label>
                         <hr>
                     </div>
          <h1>Lista de Personas</h1>
@@ -90,7 +116,75 @@
          
         <tbody></tbody>
         </table>
-
+          <!-- Modal Filtro-->
+          <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Filtrar</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="horarioModal">Sexo:</label>
+                            <select name="horario" id="horarioModal" class="form-control-lg">
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times mr-2"></i>Cancelar
+                            </button>
+                            <button type="button" class="btn btn-success" data-dismiss="modal" id="btnFiltrar">
+                                <i class="fas fa-save mr-2"></i>Filtrar
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+               <!-- Modal Reduce-->
+        <div class="modal fade" id="myModalReduce" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Promedio</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <label for="horarioModalReduce">Sexo:</label>
+                            <select name="horario" id="horarioModalReduce" class="form-control-lg">
+                                <option value="Masculino">Masculino</option>
+                                <option value="Femenino">Femenino</option>
+        
+                            </select>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">
+                                <i class="fas fa-times mr-2"></i>Cancelar
+                            </button>
+                            <button type="button" class="btn btn-success" data-dismiss="modal" id="btnPromediar" data-toggle="modal" data-target=".bd-example-modal-sm">
+                                <i class="fas fa-save mr-2"></i>Promediar
+                            </button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+    
+            <!-- Mostrar Promedio -->
+            <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content promedioAMostrar">
+                        <label class="form-control">El Promedio es:  </label>
+                        <input style="background-color: red;" type="text" class="form-control-lg" value="" id="Prom">
+                    </div>
+                </div>
+              </div>
+    
+        </div>
+    
+    
     </div>
 </body>
 </html>

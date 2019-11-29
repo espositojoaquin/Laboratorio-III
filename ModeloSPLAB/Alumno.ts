@@ -3,8 +3,8 @@ namespace personas
    export  class  Alumno extends Persona{   // si animal fuera una clase lo puedo heredar asi
         legajo:number; 
 
-        public constructor(name:string,apellido:string,leg:number)
-        { super(name,apellido); 
+        public constructor(name:string,apellido:string,leg:number,sexo:string,eda:number)
+        { super(name,apellido,sexo,eda); 
             
             this.legajo=leg;
         } 
@@ -17,6 +17,14 @@ namespace personas
         public getLegajo():number{
             return this.legajo;
         }
+        public getSexo():string{
+            return this.sexo;
+        }
+        public getEdad():number{
+            return this.edad;
+        }
+        
+
 
     } 
 

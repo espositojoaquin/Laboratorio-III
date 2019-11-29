@@ -14,6 +14,23 @@
   height: 2rem;
   margin: 2rem;
  }
+ label{
+   font-size: large;
+   font-weight: bold;
+   
+ }
+ button{
+   width: 9rem;
+   
+  }
+ /* #btnMod
+  {
+    height: 6rem;
+    width: 4rem;
+    font: icon;
+    background-color: orangered;
+    
+  }*/
 
  #salir
  {

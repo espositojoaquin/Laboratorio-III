@@ -15,8 +15,8 @@ var personas;
 (function (personas) {
     var Alumno = /** @class */ (function (_super) {
         __extends(Alumno, _super);
-        function Alumno(name, apellido, leg) {
-            var _this = _super.call(this, name, apellido) || this;
+        function Alumno(name, apellido, leg, sexo, eda) {
+            var _this = _super.call(this, name, apellido, sexo, eda) || this;
             _this.legajo = leg;
             return _this;
         }
@@ -28,6 +28,12 @@ var personas;
         };
         Alumno.prototype.getLegajo = function () {
             return this.legajo;
+        };
+        Alumno.prototype.getSexo = function () {
+            return this.sexo;
+        };
+        Alumno.prototype.getEdad = function () {
+            return this.edad;
         };
         return Alumno;
     }(personas.Persona));
